@@ -1,10 +1,13 @@
 package com.needyou.NeedU.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,7 +15,7 @@ import javax.persistence.Table;
 public class User {
 	
 	@Id  //primar'y key
-	@Column(name="user_id")	
+	@Column(name="id")	
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	private long userId;
 	
@@ -42,6 +45,16 @@ public class User {
 	
 	@Column(name="total_needs_points")
 	private String totalNeedsPoints;
+	
+	
+//	@OneToOne(fetch = FetchType.LAZY,
+//            cascade =  CascadeType.ALL,
+//            mappedBy = "user")
+//    private Need need;
+	
+	
+	
+	
 
 	public User() {
         super();
