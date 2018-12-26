@@ -1,5 +1,9 @@
 package com.needyou.NeedU.entity;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Observer;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,12 +11,18 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="user")
-public class User {
+public class User{
 	
 	@Id  //primar'y key
 	@Column(name="id")	
@@ -46,11 +56,13 @@ public class User {
 	@Column(name="total_needs_points")
 	private String totalNeedsPoints;
 	
+	@OneToMany(mappedBy = "helper")
+	  private List<Need> helpers;
 	
-//	@OneToOne(fetch = FetchType.LAZY,
-//            cascade =  CascadeType.ALL,
-//            mappedBy = "user")
-//    private Need need;
+	@OneToMany(mappedBy = "owner")
+	  private List<Need> owners;
+
+	
 	
 	
 	

@@ -16,10 +16,13 @@ public class Chat {
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	private long chatId;
 	
+	@Column(name="need_id")
+	private long needId;
+	
 	@Column(name="helper_id")
-	private String helperId;
+	private long helperId;
 
-	@Column(name="neder_id")
-	private String neederId;
+	@Column(name="needer_id")
+	private long neederId;
 	
 }

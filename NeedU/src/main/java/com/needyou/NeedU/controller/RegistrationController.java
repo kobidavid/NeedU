@@ -1,10 +1,11 @@
-package com.needyou.NeedU.entity;
+package com.needyou.NeedU.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.needyou.NeedU.entity.User;
 import com.needyou.NeedU.service.NotifficationService;
 
 @RestController
